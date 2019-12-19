@@ -1,0 +1,1700 @@
+{
+    "id": "b515323d85c65e398b36c5751285726e",
+    "name": "Taxamo",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "3f990143705d1deaac5b912d83a2e7cd",
+            "name": "Countries",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/dictionaries\/countries",
+            "description": "Countries.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "tax_supported",
+                    "description": "Should only countries with tax supported be listed?",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "7dabfd9081862052a9d34755e0c9f3e4",
+            "name": "Currencies",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/dictionaries\/currencies",
+            "description": "Currencies.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "f3aebeaf54369c592ef5eaa8137c6f07",
+            "name": "Product Types",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/dictionaries\/product_types",
+            "description": "Product types.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "7c88c16de87176c2b45dca70273ae948",
+            "name": "Locate IP Address",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/geoip",
+            "description": "Locate ip address.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "978913353ba250ea7f15f13e84213684",
+            "name": "Locate Provided IP Address",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/geoip\/{ip}",
+            "description": "Locate provided ip address.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "ip",
+                    "description": "IP address.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "b9e05888320a19e4be9409b4555bdfd0",
+            "name": "Calculate Domestic Summary",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/reports\/domestic\/summary",
+            "description": "Calculate domestic summary.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "format",
+                    "description": "Output format. 'xml' and 'csv' values are accepted. Default format - json",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "country_code",
+                    "description": "ISO 2-letter country code which will be used for determining which country is domestic.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "currency_code",
+                    "description": "ISO 3-letter currency code, e.g. EUR or USD. Defaults to the one assigned to MOSS calculations for a given country code.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "start_month",
+                    "description": "Period start month in yyyy-MM format.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "end_month",
+                    "description": "Period end month in yyyy-MM format.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "fx_date_type",
+                    "description": "Which date should be used for FX.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "3709ecd6c03c5747072deada883d7b49",
+            "name": "Calculate EU VIES Report",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/reports\/eu\/vies",
+            "description": "Calculate eu vies report.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "period_length",
+                    "description": "Length of report period. 'month', 'quarter' and 'year' values are accepted. Required only if Large Filer Format is requested.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "lff_sequence_number",
+                    "description": "Sequence number used to generate report in Large Filer Format. If not specified then '0000000001' will be used.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "transformation",
+                    "description": "Which transformation should be applied. Please note that transformation will be applied only for xml and csv formats.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "currency_code",
+                    "description": "ISO 3-letter currency code, e.g. EUR or USD. Defaults to the one assigned to MOSS calculations for a given country code.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "end_month",
+                    "description": "Period end month in yyyy-MM format.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "tax_id",
+                    "description": "MOSS-assigned tax ID - if not provided, merchant's national tax number will be used.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "start_month",
+                    "description": "Period start month in yyyy-MM format.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "eu_country_code",
+                    "description": "ISO 2-letter country code which will be used for determining which country is domestic.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "fx_date_type",
+                    "description": "Which date should be used for FX.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "format",
+                    "description": "Output format. 'xml' and 'csv' values are accepted. Default format - json",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "d3f2a8f24c1b4f44a18fc98cc6232661",
+            "name": "Detailed Refunds",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/settlement\/detailed_refunds",
+            "description": "Detailed refunds.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "format",
+                    "description": "Output format. 'xml' and 'csv' values are accepted. Default format - json",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "country_codes",
+                    "description": "Comma separated list of 2-letter country codes",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date_from",
+                    "description": "Take only refunds issued at or after the date. Format: yyyy-MM-dd",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date_to",
+                    "description": "Take only refunds issued at or before the date. Format: yyyy-MM-dd",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "Limit (no more than 1000, defaults to 100).",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "Offset. Defaults to 0",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "c6adb8709e83ae7a4ebc238369ae7ccd",
+            "name": "Fetch Refunds",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/settlement\/refunds",
+            "description": "Fetch refunds.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "format",
+                    "description": "Output format. 'xml' and 'csv' values are accepted. Default format - json",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "moss_country_code",
+                    "description": "MOSS country code, used to determine currency. If ommited, merchant default setting is used.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "tax_region",
+                    "description": "Tax region key, defaults to EU for backwards compatibility.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date_from",
+                    "description": "Take only refunds issued at or after the date. Format: yyyy-MM-dd",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "f6f3c22c42f5875db088658ec720eaa2",
+            "name": "Fetch Summary",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/settlement\/summary\/{quarter}",
+            "description": "Fetch summary.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "moss_country_code",
+                    "description": "MOSS country code, used to determine currency. If ommited, merchant default setting is used.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "tax_region",
+                    "description": "Tax region key, defaults to EU for backwards compatibility.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "start_month",
+                    "description": "Period start month in yyyy-MM format.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "end_month",
+                    "description": "Period end month in yyyy-MM format.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "quarter",
+                    "description": "Quarter in yyyy-MM format. If start-date and end-date are provided, quarter is ignored and should be set to 'range'.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "adda1fed1032d090552c6a9bdf0aba6e",
+            "name": "Fetch Settlement",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/settlement\/{quarter}",
+            "description": "Fetch settlement.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "moss_tax_id",
+                    "description": "MOSS-assigned tax ID - if not provided, merchant's national tax number will be used. Deprecated, please use tax-id.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "currency_code",
+                    "description": "ISO 3-letter currency code, e.g. EUR or USD. Defaults to the one assigned to MOSS calculations for a given country code.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "end_month",
+                    "description": "Period end month in yyyy-MM format.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "tax_id",
+                    "description": "MOSS-assigned tax ID - if not provided, merchant's national tax number will be used.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "refund_date_kind_override",
+                    "description": "Set to 'order_date' to show only refunds for the transactions in the selected reporting period. Set to 'refund_timestamp' to show refunds that were created in the selected reporting period. Do not set to use the default region's setting.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "start_month",
+                    "description": "Period start month in yyyy-MM format.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "moss_country_code",
+                    "description": "MOSS country code, used to determine currency. If ommited, merchant default setting is used.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "format",
+                    "description": "Output format. 'xml' and 'csv' values are accepted. Default format - json",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "tax_country_code",
+                    "description": "Tax entity country code, used to determine currency\/region. ",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "quarter",
+                    "description": "Quarter in yyyy-MM format. If start-date and end-date are provided, quarter is ignored and should be set to 'range'.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "65bcfc3daee1157ba86aadbe28d6b37f",
+            "name": "Settlement By Country",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/stats\/settlement\/by_country",
+            "description": "Settlement by country.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "date_from",
+                    "description": "Take only refunds issued at or after the date. Format: yyyy-MM-dd",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date_to",
+                    "description": "Take only refunds issued at or before the date. Format: yyyy-MM-dd",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "f8f462237833c4b92a8f69643ba5d6ec",
+            "name": "Settlement By Tax Type",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/stats\/settlement\/by_taxation_type",
+            "description": "Settlement by tax type.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "date_from",
+                    "description": "Take only refunds issued at or after the date. Format: yyyy-MM-dd",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date_to",
+                    "description": "Take only refunds issued at or before the date. Format: yyyy-MM-dd",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "c3d53c2a30c3abc3879355ac2b4be032",
+            "name": "Settlement Stats Over Time",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/stats\/settlement\/daily",
+            "description": "Settlement stats over time.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "interval",
+                    "description": "Interval type - day, week, month.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date_from",
+                    "description": "Take only refunds issued at or after the date. Format: yyyy-MM-dd",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date_to",
+                    "description": "Take only refunds issued at or before the date. Format: yyyy-MM-dd",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "be3ab0ab0864e2689e93e3cef2a54808",
+            "name": "Transaction Stats",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/stats\/transactions",
+            "description": "Transaction stats.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "date_from",
+                    "description": "Take only refunds issued at or after the date. Format: yyyy-MM-dd",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date_to",
+                    "description": "Take only refunds issued at or before the date. Format: yyyy-MM-dd",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "interval",
+                    "description": "Interval type - day, week, month.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "a4a82e9af614a6efef723ef73729dc90",
+            "name": "Settlement By Country",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/stats\/transactions\/by_country",
+            "description": "Settlement by country.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "global_currency_code",
+                    "description": "Global currency code to use for conversion - in addition to country's currency if rate is available. Conversion is indicative and based on most-recent rate from ECB.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date_from",
+                    "description": "Take only refunds issued at or after the date. Format: yyyy-MM-dd",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "date_to",
+                    "description": "Take only refunds issued at or before the date. Format: yyyy-MM-dd",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "3228ec2ab4dba91ca4265412798a7264",
+            "name": "Simple Tax",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/tax\/calculate",
+            "description": "Simple tax.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "product_type",
+                    "description": "Product type, according to dictionary \/dictionaries\/product_types. ",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "invoice_address_city",
+                    "description": "Invoice address\/postal_code",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "buyer_credit_card_prefix",
+                    "description": "First 6 digits of buyer's credit card prefix.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "currency_code",
+                    "description": "ISO 3-letter currency code, e.g. EUR or USD. Defaults to the one assigned to MOSS calculations for a given country code.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "invoice_address_region",
+                    "description": "Invoice address\/region",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "unit_price",
+                    "description": "Unit price.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "quantity",
+                    "description": "Quantity Defaults to 1.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "buyer_tax_number",
+                    "description": " Buyer's tax number - EU VAT number for example. If using EU VAT number, it is possible to provide country code in it (e.g. IE1234567X) or simply use billing_country_code field for that. In the first case, if billing_country_code value was provided, it will be overwritten with country code value extracted from VAT number - but only if the VAT has been verified properly.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "force_country_code",
+                    "description": "Two-letter ISO country code, e.g. FR. Use it to force country code for tax calculation.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "order_date",
+                    "description": "Order date in yyyy-MM-dd format, in merchant's timezone. If provided by the API caller, no timezone conversion is performed. Default value is current date and time. When using public token, the default value is used.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "amount",
+                    "description": "Amount. Required if total amount or both unit price and quantity are not provided.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "billing_country_code",
+                    "description": "Billing two letter ISO country code.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "invoice_address_postal_code",
+                    "description": "Invoice address\/postal_code",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "total_amount",
+                    "description": "Total amount. Required if amount or both unit price and quantity are not provided.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "tax_deducted",
+                    "description": "If the transaction is in a country supported by Taxamo, but the tax is not calculated due to merchant settings or EU B2B transaction for example.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "2bc91a72b770aa81d1375f16e249f6b6",
+            "name": "Calculate Tax",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/tax\/calculate",
+            "description": "Calculate tax.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "input",
+                    "description": "Input",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "f9b8b57e33c5ba6c8a2e76ee733166c3",
+            "name": "Calculate Location",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/tax\/location\/calculate",
+            "description": "Calculate location.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "billing_country_code",
+                    "description": "Billing two letter ISO country code.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "buyer_credit_card_prefix",
+                    "description": "First 6 digits of buyer's credit card prefix.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "86a5066b445bb98a851970282be174b5",
+            "name": "Validate VAT Number",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/tax\/vat_numbers\/{tax_number}\/validate",
+            "description": "Validate vat number.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "country_code",
+                    "description": "ISO 2-letter country code which will be used for determining which country is domestic.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "tax_number",
+                    "description": "Tax number",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "8ec05f939a9186d679ea3809ca4f0f22",
+            "name": "Browse Transactions",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions",
+            "description": "Browse transactions.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "filter_text",
+                    "description": "Filtering expression",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "Offset. Defaults to 0",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "has_note",
+                    "description": "Return only transactions with a note field set.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "key_or_custom_id",
+                    "description": "Taxamo provided transaction key or custom id",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "currency_code",
+                    "description": "ISO 3-letter currency code, e.g. EUR or USD. Defaults to the one assigned to MOSS calculations for a given country code.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "order_date_to",
+                    "description": "Order date to in yyyy-MM-dd format.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort_reverse",
+                    "description": "If true, results are sorted in descending order.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "limit",
+                    "description": "Limit (no more than 1000, defaults to 100).",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "invoice_number",
+                    "description": "Transaction invoice number.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "tax_country_codes",
+                    "description": "Comma separated list of two letter ISO tax country codes.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "statuses",
+                    "description": "Comma separated list of of transaction statuses. 'N' - unconfirmed transaction, 'C' - confirmed transaction.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "original_transaction_key",
+                    "description": "Taxamo provided original transaction key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "order_date_from",
+                    "description": "Order date from in yyyy-MM-dd format.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "total_amount_greater_than",
+                    "description": "Return only transactions with total amount greater than given number. Transactions with total amount equal to a given number (e.g. 0) are not returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "format",
+                    "description": "Output format. 'xml' and 'csv' values are accepted. Default format - json",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "total_amount_less_than",
+                    "description": "Return only transactions with total amount less than a given number. Transactions with total amount equal to a given number (e.g. 1) are not returned.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "tax_country_code",
+                    "description": "Tax entity country code, used to determine currency\/region. ",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "1f03b1d7d8729fa477a6dd81294d1242",
+            "name": "Store Transaction",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions",
+            "description": "Store transaction.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "input",
+                    "description": "Input",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "ba33b6c6cb760a560c3f628cf2584bb4",
+            "name": "Delete Transaction",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}",
+            "description": "Delete transaction.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "delete",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "Transaction key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "1ca05e0819a3739a33baa071e9716171",
+            "name": "Retrieve Transaction Data.",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}",
+            "description": "Retrieve transaction data..",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "Transaction key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "bb6b7f701bc3e8b7bfd2cd9150cf686e",
+            "name": "Update Transaction",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}",
+            "description": "Update transaction.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "put",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "Transaction key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "input",
+                    "description": "Input",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "9f4ca116b0c88c523c22032b00057371",
+            "name": "Confirm Transaction",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/confirm",
+            "description": "Confirm transaction.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "Transaction key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "input",
+                    "description": "Input",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "7d85456a196888871dedb1d176a4a71c",
+            "name": "Email Credit Note",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/invoice\/refunds\/{refund_note_number}\/send_email",
+            "description": "Email credit note.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "Transaction key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "refund_note_number",
+                    "description": "Refund note id.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "input",
+                    "description": "Input",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "c41442e3077cee8bf942eb959f9f0983",
+            "name": "Email Invoice",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/invoice\/send_email",
+            "description": "Email invoice.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "Transaction key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "input",
+                    "description": "Input",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "26aef414fb33584d250223f7ffa5e70c",
+            "name": "List Payments",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/payments",
+            "description": "List payments.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "limit",
+                    "description": "Limit (no more than 1000, defaults to 100).",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "offset",
+                    "description": "Offset. Defaults to 0",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "key",
+                    "description": "Transaction key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "71aca5d559bf32a817390e9bdd4a18fa",
+            "name": "Register A Payment",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/payments",
+            "description": "Register a payment.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "Transaction key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "input",
+                    "description": "Input",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "89e30d4f141d86b34357e279c804af55",
+            "name": "Capture Payment",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/payments\/capture",
+            "description": "Capture payment.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "Transaction key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "3ceeb3ebe7bd3d294d8f2210b8bfabe4",
+            "name": "Get Transaction Refunds",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/refunds",
+            "description": "Get transaction refunds.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "Transaction key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "ba2d826ee202325ed40083db578049a7",
+            "name": "Create A Refund",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/refunds",
+            "description": "Create a refund.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "Transaction key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "input",
+                    "description": "Input",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "9a5e0ed9d6922fceb9b98c434875472b",
+            "name": "Un-confirm The Transaction",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/unconfirm",
+            "description": "Un-confirm the transaction.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "Transaction key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "input",
+                    "description": "Input",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "6e71760d3a75ef1584ef760f317e9a56",
+            "name": "Create SMS Token",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/verification\/sms",
+            "description": "Create sms token.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "post",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "input",
+                    "description": "Input",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        },
+        {
+            "id": "237580aad2a2e16154a231d11000cc6e",
+            "name": "Verify SMS Token",
+            "url": "httpsapi.taxamo.com\/\/api\/v1\/verification\/sms\/{token}",
+            "description": "Verify sms token.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "token",
+                    "description": "Provided token.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "rawModeData": ""
+        }
+    ]
+}
