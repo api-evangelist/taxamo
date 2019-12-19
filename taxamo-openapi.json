@@ -1,0 +1,3396 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1",
+        "title": "Taxamo",
+        "description": "Taxamo???s elegant suite of APIs and comprehensive reporting dashboard enables digital merchants to easily comply with EU regulatory requirements on tax calculation, evidence collection, tax return creation and data storage.",
+        "termsOfService": ""
+    },
+    "servers": [
+        "httpsapi.taxamo.com\/"
+    ],
+    "paths": {
+        "\/api\/v1\/dictionaries\/countries": {
+            "get": {
+                "summary": "Countries",
+                "description": "Countries.",
+                "operationId": "GetCountriesDict",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "tax_supported",
+                        "in": "query",
+                        "description": "Should only countries with tax supported be listed?"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/dictionaries\/currencies": {
+            "get": {
+                "summary": "Currencies",
+                "description": "Currencies.",
+                "operationId": "GetCurrenciesDict",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/api\/v1\/dictionaries\/product_types": {
+            "get": {
+                "summary": "Product Types",
+                "description": "Product types.",
+                "operationId": "GetProductTypesDict",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/api\/v1\/geoip": {
+            "get": {
+                "summary": "Locate IP Address",
+                "description": "Locate ip address.",
+                "operationId": "LocateMyIP",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/api\/v1\/geoip\/{ip}": {
+            "get": {
+                "summary": "Locate Provided IP Address",
+                "description": "Locate provided ip address.",
+                "operationId": "LocateGivenIP",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "ip",
+                        "in": "path",
+                        "description": "IP address."
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/reports\/domestic\/summary": {
+            "get": {
+                "summary": "Calculate Domestic Summary",
+                "description": "Calculate domestic summary.",
+                "operationId": "GetDomesticSummaryReport",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "Output format. 'xml' and 'csv' values are accepted. Default format - json"
+                    },
+                    {
+                        "name": "country_code",
+                        "in": "query",
+                        "description": "ISO 2-letter country code which will be used for determining which country is domestic."
+                    },
+                    {
+                        "name": "currency_code",
+                        "in": "query",
+                        "description": "ISO 3-letter currency code, e.g. EUR or USD. Defaults to the one assigned to MOSS calculations for a given country code."
+                    },
+                    {
+                        "name": "start_month",
+                        "in": "query",
+                        "description": "Period start month in yyyy-MM format."
+                    },
+                    {
+                        "name": "end_month",
+                        "in": "query",
+                        "description": "Period end month in yyyy-MM format."
+                    },
+                    {
+                        "name": "fx_date_type",
+                        "in": "query",
+                        "description": "Which date should be used for FX."
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/reports\/eu\/vies": {
+            "get": {
+                "summary": "Calculate EU VIES Report",
+                "description": "Calculate eu vies report.",
+                "operationId": "GetEuViesReport",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "period_length",
+                        "in": "query",
+                        "description": "Length of report period. 'month', 'quarter' and 'year' values are accepted. Required only if Large Filer Format is requested."
+                    },
+                    {
+                        "name": "lff_sequence_number",
+                        "in": "query",
+                        "description": "Sequence number used to generate report in Large Filer Format. If not specified then '0000000001' will be used."
+                    },
+                    {
+                        "name": "transformation",
+                        "in": "query",
+                        "description": "Which transformation should be applied. Please note that transformation will be applied only for xml and csv formats."
+                    },
+                    {
+                        "name": "currency_code",
+                        "in": "query",
+                        "description": "ISO 3-letter currency code, e.g. EUR or USD. Defaults to the one assigned to MOSS calculations for a given country code."
+                    },
+                    {
+                        "name": "end_month",
+                        "in": "query",
+                        "description": "Period end month in yyyy-MM format."
+                    },
+                    {
+                        "name": "tax_id",
+                        "in": "query",
+                        "description": "MOSS-assigned tax ID - if not provided, merchant's national tax number will be used."
+                    },
+                    {
+                        "name": "start_month",
+                        "in": "query",
+                        "description": "Period start month in yyyy-MM format."
+                    },
+                    {
+                        "name": "eu_country_code",
+                        "in": "query",
+                        "description": "ISO 2-letter country code which will be used for determining which country is domestic."
+                    },
+                    {
+                        "name": "fx_date_type",
+                        "in": "query",
+                        "description": "Which date should be used for FX."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "Output format. 'xml' and 'csv' values are accepted. Default format - json"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/settlement\/detailed_refunds": {
+            "get": {
+                "summary": "Detailed Refunds",
+                "description": "Detailed refunds.",
+                "operationId": "GetDetailedRefunds",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "Output format. 'xml' and 'csv' values are accepted. Default format - json"
+                    },
+                    {
+                        "name": "country_codes",
+                        "in": "query",
+                        "description": "Comma separated list of 2-letter country codes"
+                    },
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "Take only refunds issued at or after the date. Format: yyyy-MM-dd"
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "query",
+                        "description": "Take only refunds issued at or before the date. Format: yyyy-MM-dd"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit (no more than 1000, defaults to 100)."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset. Defaults to 0"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/settlement\/refunds": {
+            "get": {
+                "summary": "Fetch Refunds",
+                "description": "Fetch refunds.",
+                "operationId": "GetRefunds",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "Output format. 'xml' and 'csv' values are accepted. Default format - json"
+                    },
+                    {
+                        "name": "moss_country_code",
+                        "in": "query",
+                        "description": "MOSS country code, used to determine currency. If ommited, merchant default setting is used."
+                    },
+                    {
+                        "name": "tax_region",
+                        "in": "query",
+                        "description": "Tax region key, defaults to EU for backwards compatibility."
+                    },
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "Take only refunds issued at or after the date. Format: yyyy-MM-dd"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/settlement\/summary\/{quarter}": {
+            "get": {
+                "summary": "Fetch Summary",
+                "description": "Fetch summary.",
+                "operationId": "GetSettlementSummary",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "moss_country_code",
+                        "in": "query",
+                        "description": "MOSS country code, used to determine currency. If ommited, merchant default setting is used."
+                    },
+                    {
+                        "name": "tax_region",
+                        "in": "query",
+                        "description": "Tax region key, defaults to EU for backwards compatibility."
+                    },
+                    {
+                        "name": "start_month",
+                        "in": "query",
+                        "description": "Period start month in yyyy-MM format."
+                    },
+                    {
+                        "name": "end_month",
+                        "in": "query",
+                        "description": "Period end month in yyyy-MM format."
+                    },
+                    {
+                        "name": "quarter",
+                        "in": "path",
+                        "description": "Quarter in yyyy-MM format. If start-date and end-date are provided, quarter is ignored and should be set to 'range'."
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/settlement\/{quarter}": {
+            "get": {
+                "summary": "Fetch Settlement",
+                "description": "Fetch settlement.",
+                "operationId": "GetSettlement",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "moss_tax_id",
+                        "in": "query",
+                        "description": "MOSS-assigned tax ID - if not provided, merchant's national tax number will be used. Deprecated, please use tax-id."
+                    },
+                    {
+                        "name": "currency_code",
+                        "in": "query",
+                        "description": "ISO 3-letter currency code, e.g. EUR or USD. Defaults to the one assigned to MOSS calculations for a given country code."
+                    },
+                    {
+                        "name": "end_month",
+                        "in": "query",
+                        "description": "Period end month in yyyy-MM format."
+                    },
+                    {
+                        "name": "tax_id",
+                        "in": "query",
+                        "description": "MOSS-assigned tax ID - if not provided, merchant's national tax number will be used."
+                    },
+                    {
+                        "name": "refund_date_kind_override",
+                        "in": "query",
+                        "description": "Set to 'order_date' to show only refunds for the transactions in the selected reporting period. Set to 'refund_timestamp' to show refunds that were created in the selected reporting period. Do not set to use the default region's setting."
+                    },
+                    {
+                        "name": "start_month",
+                        "in": "query",
+                        "description": "Period start month in yyyy-MM format."
+                    },
+                    {
+                        "name": "moss_country_code",
+                        "in": "query",
+                        "description": "MOSS country code, used to determine currency. If ommited, merchant default setting is used."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "Output format. 'xml' and 'csv' values are accepted. Default format - json"
+                    },
+                    {
+                        "name": "tax_country_code",
+                        "in": "query",
+                        "description": "Tax entity country code, used to determine currency\/region. "
+                    },
+                    {
+                        "name": "quarter",
+                        "in": "path",
+                        "description": "Quarter in yyyy-MM format. If start-date and end-date are provided, quarter is ignored and should be set to 'range'."
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/stats\/settlement\/by_country": {
+            "get": {
+                "summary": "Settlement By Country",
+                "description": "Settlement by country.",
+                "operationId": "GetSettlementStatsByCountry",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "Take only refunds issued at or after the date. Format: yyyy-MM-dd"
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "query",
+                        "description": "Take only refunds issued at or before the date. Format: yyyy-MM-dd"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/stats\/settlement\/by_taxation_type": {
+            "get": {
+                "summary": "Settlement By Tax Type",
+                "description": "Settlement by tax type.",
+                "operationId": "GetSettlementStatsByTaxationType",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "Take only refunds issued at or after the date. Format: yyyy-MM-dd"
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "query",
+                        "description": "Take only refunds issued at or before the date. Format: yyyy-MM-dd"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/stats\/settlement\/daily": {
+            "get": {
+                "summary": "Settlement Stats Over Time",
+                "description": "Settlement stats over time.",
+                "operationId": "GetDailySettlementStats",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "interval",
+                        "in": "query",
+                        "description": "Interval type - day, week, month."
+                    },
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "Take only refunds issued at or after the date. Format: yyyy-MM-dd"
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "query",
+                        "description": "Take only refunds issued at or before the date. Format: yyyy-MM-dd"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/stats\/transactions": {
+            "get": {
+                "summary": "Transaction Stats",
+                "description": "Transaction stats.",
+                "operationId": "GetTransactionsStats",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "Take only refunds issued at or after the date. Format: yyyy-MM-dd"
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "query",
+                        "description": "Take only refunds issued at or before the date. Format: yyyy-MM-dd"
+                    },
+                    {
+                        "name": "interval",
+                        "in": "query",
+                        "description": "Interval type - day, week, month."
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/stats\/transactions\/by_country": {
+            "get": {
+                "summary": "Settlement By Country",
+                "description": "Settlement by country.",
+                "operationId": "GetTransactionsStatsByCountry",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "global_currency_code",
+                        "in": "query",
+                        "description": "Global currency code to use for conversion - in addition to country's currency if rate is available. Conversion is indicative and based on most-recent rate from ECB."
+                    },
+                    {
+                        "name": "date_from",
+                        "in": "query",
+                        "description": "Take only refunds issued at or after the date. Format: yyyy-MM-dd"
+                    },
+                    {
+                        "name": "date_to",
+                        "in": "query",
+                        "description": "Take only refunds issued at or before the date. Format: yyyy-MM-dd"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/tax\/calculate": {
+            "get": {
+                "summary": "Simple Tax",
+                "description": "Simple tax.",
+                "operationId": "CalculateSimpleTax",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "product_type",
+                        "in": "query",
+                        "description": "Product type, according to dictionary \/dictionaries\/product_types. "
+                    },
+                    {
+                        "name": "invoice_address_city",
+                        "in": "query",
+                        "description": "Invoice address\/postal_code"
+                    },
+                    {
+                        "name": "buyer_credit_card_prefix",
+                        "in": "query",
+                        "description": "First 6 digits of buyer's credit card prefix."
+                    },
+                    {
+                        "name": "currency_code",
+                        "in": "query",
+                        "description": "ISO 3-letter currency code, e.g. EUR or USD. Defaults to the one assigned to MOSS calculations for a given country code."
+                    },
+                    {
+                        "name": "invoice_address_region",
+                        "in": "query",
+                        "description": "Invoice address\/region"
+                    },
+                    {
+                        "name": "unit_price",
+                        "in": "query",
+                        "description": "Unit price."
+                    },
+                    {
+                        "name": "quantity",
+                        "in": "query",
+                        "description": "Quantity Defaults to 1."
+                    },
+                    {
+                        "name": "buyer_tax_number",
+                        "in": "query",
+                        "description": " Buyer's tax number - EU VAT number for example. If using EU VAT number, it is possible to provide country code in it (e.g. IE1234567X) or simply use billing_country_code field for that. In the first case, if billing_country_code value was provided, it will be overwritten with country code value extracted from VAT number - but only if the VAT has been verified properly."
+                    },
+                    {
+                        "name": "force_country_code",
+                        "in": "query",
+                        "description": "Two-letter ISO country code, e.g. FR. Use it to force country code for tax calculation."
+                    },
+                    {
+                        "name": "order_date",
+                        "in": "query",
+                        "description": "Order date in yyyy-MM-dd format, in merchant's timezone. If provided by the API caller, no timezone conversion is performed. Default value is current date and time. When using public token, the default value is used."
+                    },
+                    {
+                        "name": "amount",
+                        "in": "query",
+                        "description": "Amount. Required if total amount or both unit price and quantity are not provided."
+                    },
+                    {
+                        "name": "billing_country_code",
+                        "in": "query",
+                        "description": "Billing two letter ISO country code."
+                    },
+                    {
+                        "name": "invoice_address_postal_code",
+                        "in": "query",
+                        "description": "Invoice address\/postal_code"
+                    },
+                    {
+                        "name": "total_amount",
+                        "in": "query",
+                        "description": "Total amount. Required if amount or both unit price and quantity are not provided."
+                    },
+                    {
+                        "name": "tax_deducted",
+                        "in": "query",
+                        "description": "If the transaction is in a country supported by Taxamo, but the tax is not calculated due to merchant settings or EU B2B transaction for example."
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Calculate Tax",
+                "description": "Calculate tax.",
+                "operationId": "CalculateTax",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "input",
+                        "in": "body",
+                        "description": "Input"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/tax\/location\/calculate": {
+            "get": {
+                "summary": "Calculate Location",
+                "description": "Calculate location.",
+                "operationId": "CalculateTaxLocation",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "billing_country_code",
+                        "in": "query",
+                        "description": "Billing two letter ISO country code."
+                    },
+                    {
+                        "name": "buyer_credit_card_prefix",
+                        "in": "query",
+                        "description": "First 6 digits of buyer's credit card prefix."
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/tax\/vat_numbers\/{tax_number}\/validate": {
+            "get": {
+                "summary": "Validate VAT Number",
+                "description": "Validate vat number.",
+                "operationId": "ValidateTaxNumber",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "country_code",
+                        "in": "query",
+                        "description": "ISO 2-letter country code which will be used for determining which country is domestic."
+                    },
+                    {
+                        "name": "tax_number",
+                        "in": "path",
+                        "description": "Tax number"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/transactions": {
+            "get": {
+                "summary": "Browse Transactions",
+                "description": "Browse transactions.",
+                "operationId": "ListTransactions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "filter_text",
+                        "in": "query",
+                        "description": "Filtering expression"
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset. Defaults to 0"
+                    },
+                    {
+                        "name": "has_note",
+                        "in": "query",
+                        "description": "Return only transactions with a note field set."
+                    },
+                    {
+                        "name": "key_or_custom_id",
+                        "in": "query",
+                        "description": "Taxamo provided transaction key or custom id"
+                    },
+                    {
+                        "name": "currency_code",
+                        "in": "query",
+                        "description": "ISO 3-letter currency code, e.g. EUR or USD. Defaults to the one assigned to MOSS calculations for a given country code."
+                    },
+                    {
+                        "name": "order_date_to",
+                        "in": "query",
+                        "description": "Order date to in yyyy-MM-dd format."
+                    },
+                    {
+                        "name": "sort_reverse",
+                        "in": "query",
+                        "description": "If true, results are sorted in descending order."
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit (no more than 1000, defaults to 100)."
+                    },
+                    {
+                        "name": "invoice_number",
+                        "in": "query",
+                        "description": "Transaction invoice number."
+                    },
+                    {
+                        "name": "tax_country_codes",
+                        "in": "query",
+                        "description": "Comma separated list of two letter ISO tax country codes."
+                    },
+                    {
+                        "name": "statuses",
+                        "in": "query",
+                        "description": "Comma separated list of of transaction statuses. 'N' - unconfirmed transaction, 'C' - confirmed transaction."
+                    },
+                    {
+                        "name": "original_transaction_key",
+                        "in": "query",
+                        "description": "Taxamo provided original transaction key"
+                    },
+                    {
+                        "name": "order_date_from",
+                        "in": "query",
+                        "description": "Order date from in yyyy-MM-dd format."
+                    },
+                    {
+                        "name": "total_amount_greater_than",
+                        "in": "query",
+                        "description": "Return only transactions with total amount greater than given number. Transactions with total amount equal to a given number (e.g. 0) are not returned."
+                    },
+                    {
+                        "name": "format",
+                        "in": "query",
+                        "description": "Output format. 'xml' and 'csv' values are accepted. Default format - json"
+                    },
+                    {
+                        "name": "total_amount_less_than",
+                        "in": "query",
+                        "description": "Return only transactions with total amount less than a given number. Transactions with total amount equal to a given number (e.g. 1) are not returned."
+                    },
+                    {
+                        "name": "tax_country_code",
+                        "in": "query",
+                        "description": "Tax entity country code, used to determine currency\/region. "
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Store Transaction",
+                "description": "Store transaction.",
+                "operationId": "CreateTransaction",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "input",
+                        "in": "body",
+                        "description": "Input"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/transactions\/{key}": {
+            "delete": {
+                "summary": "Delete Transaction",
+                "description": "Delete transaction.",
+                "operationId": "CancelTransaction",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "description": "Transaction key"
+                    }
+                ]
+            },
+            "get": {
+                "summary": "Retrieve Transaction Data.",
+                "description": "Retrieve transaction data..",
+                "operationId": "GetTransaction",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "description": "Transaction key"
+                    }
+                ]
+            },
+            "put": {
+                "summary": "Update Transaction",
+                "description": "Update transaction.",
+                "operationId": "UpdateTransaction",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "description": "Transaction key"
+                    },
+                    {
+                        "name": "input",
+                        "in": "body",
+                        "description": "Input"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/transactions\/{key}\/confirm": {
+            "post": {
+                "summary": "Confirm Transaction",
+                "description": "Confirm transaction.",
+                "operationId": "ConfirmTransaction",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "description": "Transaction key"
+                    },
+                    {
+                        "name": "input",
+                        "in": "body",
+                        "description": "Input"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/transactions\/{key}\/invoice\/refunds\/{refund_note_number}\/send_email": {
+            "post": {
+                "summary": "Email Credit Note",
+                "description": "Email credit note.",
+                "operationId": "EmailRefund",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "description": "Transaction key"
+                    },
+                    {
+                        "name": "refund_note_number",
+                        "in": "path",
+                        "description": "Refund note id."
+                    },
+                    {
+                        "name": "input",
+                        "in": "body",
+                        "description": "Input"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/transactions\/{key}\/invoice\/send_email": {
+            "post": {
+                "summary": "Email Invoice",
+                "description": "Email invoice.",
+                "operationId": "EmailInvoice",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "description": "Transaction key"
+                    },
+                    {
+                        "name": "input",
+                        "in": "body",
+                        "description": "Input"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/transactions\/{key}\/payments": {
+            "get": {
+                "summary": "List Payments",
+                "description": "List payments.",
+                "operationId": "ListPayments",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Limit (no more than 1000, defaults to 100)."
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Offset. Defaults to 0"
+                    },
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "description": "Transaction key"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Register A Payment",
+                "description": "Register a payment.",
+                "operationId": "CreatePayment",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "description": "Transaction key"
+                    },
+                    {
+                        "name": "input",
+                        "in": "body",
+                        "description": "Input"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/transactions\/{key}\/payments\/capture": {
+            "post": {
+                "summary": "Capture Payment",
+                "description": "Capture payment.",
+                "operationId": "CapturePayment",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "description": "Transaction key"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/transactions\/{key}\/refunds": {
+            "get": {
+                "summary": "Get Transaction Refunds",
+                "description": "Get transaction refunds.",
+                "operationId": "ListRefunds",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "description": "Transaction key"
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create A Refund",
+                "description": "Create a refund.",
+                "operationId": "CreateRefund",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "description": "Transaction key"
+                    },
+                    {
+                        "name": "input",
+                        "in": "body",
+                        "description": "Input"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/transactions\/{key}\/unconfirm": {
+            "post": {
+                "summary": "Un-confirm The Transaction",
+                "description": "Un-confirm the transaction.",
+                "operationId": "UnconfirmTransaction",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "key",
+                        "in": "path",
+                        "description": "Transaction key"
+                    },
+                    {
+                        "name": "input",
+                        "in": "body",
+                        "description": "Input"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/verification\/sms": {
+            "post": {
+                "summary": "Create SMS Token",
+                "description": "Create sms token.",
+                "operationId": "CreateSMSToken",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "input",
+                        "in": "body",
+                        "description": "Input"
+                    }
+                ]
+            }
+        },
+        "\/api\/v1\/verification\/sms\/{token}": {
+            "get": {
+                "summary": "Verify SMS Token",
+                "description": "Verify sms token.",
+                "operationId": "VerifySMSToken",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "path",
+                        "description": "Provided token."
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "C": {
+                "type": "object",
+                "properties": {
+                    "day": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "day_raw": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "N": {
+                "type": "object",
+                "properties": {
+                    "day": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "day_raw": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "additional_currencies": {
+                "type": "object"
+            },
+            "additional_currency": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "fx_rate": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "total_amount": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "by_country": {
+                "type": "object",
+                "properties": {
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_country_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "by_status": {
+                "type": "object",
+                "properties": {
+                    "C": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "N": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "by_taxation_type": {
+                "type": "object",
+                "properties": {
+                    "deducted_count": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "eu_b2b": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "eu_taxed": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "taxed_count": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "transactions_count": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "calculateSimpleTaxIn": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "billing_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_credit_card_prefix": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_tax_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "force_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_address_city": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_address_postal_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_address_region": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "order_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "product_type": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "quantity": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_deducted": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "total_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "unit_price": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "calculateSimpleTaxOut": {
+                "type": "object",
+                "properties": {
+                    "storage_required_fields": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_required_fields": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "calculateTaxIn": {
+                "type": "object"
+            },
+            "calculateTaxLocationIn": {
+                "type": "object",
+                "properties": {
+                    "billing_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_credit_card_prefix": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "calculateTaxLocationOut": {
+                "type": "object",
+                "properties": {
+                    "billing_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_credit_card_prefix": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_ip": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_deducted": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_supported": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "calculateTaxOut": {
+                "type": "object",
+                "properties": {
+                    "storage_required_fields": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_required_fields": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "cancelTransactionOut": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "capturePaymentOut": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "confirmTransactionIn": {
+                "type": "object"
+            },
+            "confirmTransactionOut": {
+                "type": "object",
+                "properties": {
+                    "storage_required_fields": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_required_fields": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "countries": {
+                "type": "object"
+            },
+            "country": {
+                "type": "object",
+                "properties": {
+                    "callingCode": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "cca2": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "cca3": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "ccn3": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "code_long": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "codenum": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "currency": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_number_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_region": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_supported": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "country_schema": {
+                "type": "object",
+                "properties": {
+                    "callingCode": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "cca2": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "cca3": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "ccn3": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "code_long": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "codenum": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "currency": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_number_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_region": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_supported": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "createPaymentIn": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "payment_information": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "payment_timestamp": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "createPaymentOut": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "createRefundIn": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "line_key": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "refund_reason": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "total_amount": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "createRefundOut": {
+                "type": "object",
+                "properties": {
+                    "refunded_tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "refunded_total_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "total_amount": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "createSMSTokenIn": {
+                "type": "object",
+                "properties": {
+                    "country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "recipient": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "createSMSTokenOut": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "createTransactionIn": {
+                "type": "object",
+                "properties": {
+                    "manual_mode": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "createTransactionOut": {
+                "type": "object",
+                "properties": {
+                    "storage_required_fields": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_required_fields": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "currency_schema": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isocode": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "isonum": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "minorunits": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "custom_fields": {
+                "type": "object",
+                "properties": {
+                    "key": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "value": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "emailInvoiceIn": {
+                "type": "object",
+                "properties": {
+                    "buyer_email": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "emailInvoiceOut": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "emailRefundIn": {
+                "type": "object",
+                "properties": {
+                    "buyer_email": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "emailRefundOut": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "evidence": {
+                "type": "object"
+            },
+            "evidence_schema": {
+                "type": "object",
+                "properties": {
+                    "evidence_type": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "evidence_value": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "resolved_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "used": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getCountriesDictIn": {
+                "type": "object",
+                "properties": {
+                    "tax_supported": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getCountriesDictOut": {
+                "type": "object",
+                "properties": {
+                    "dictionary": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getCurrenciesDictOut": {
+                "type": "object",
+                "properties": {
+                    "dictionary": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getDailySettlementStatsIn": {
+                "type": "object",
+                "properties": {
+                    "date_from": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "date_to": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "interval": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getDailySettlementStatsOut": {
+                "type": "object",
+                "properties": {
+                    "settlement_daily": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getDetailedRefundsIn": {
+                "type": "object",
+                "properties": {
+                    "country_codes": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "date_from": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "date_to": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "format": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "limit": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "offset": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getDetailedRefundsOut": {
+                "type": "object",
+                "properties": {
+                    "report": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getDomesticSummaryReportIn": {
+                "type": "object",
+                "properties": {
+                    "country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "end_month": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "format": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "fx_date_type": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "start_month": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getDomesticSummaryReportOut": {
+                "type": "object",
+                "properties": {
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "domestic_refunds_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "domestic_refunds_tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "domestic_sales_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "domestic_tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "end_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "eu_tax_deducted_refunds": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "eu_tax_deducted_sales": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "global_refunds_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "global_refunds_tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "global_sales_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "global_sales_tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "start_date": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getEuViesReportIn": {
+                "type": "object",
+                "properties": {
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "end_month": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "eu_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "format": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "fx_date_type": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "lff_sequence_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "period_length": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "start_month": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "transformation": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getEuViesReportOut": {
+                "type": "object",
+                "properties": {
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "end_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "report": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "start_date": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getProductTypesDictOut": {
+                "type": "object",
+                "properties": {
+                    "dictionary": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getRefundsIn": {
+                "type": "object",
+                "properties": {
+                    "date_from": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "format": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "moss_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_region": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getRefundsOut": {
+                "type": "object",
+                "properties": {
+                    "report": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getSettlementIn": {
+                "type": "object",
+                "properties": {
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "end_month": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "format": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "moss_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "moss_tax_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "refund_date_kind_override": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "start_month": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_id": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getSettlementOut": {
+                "type": "object",
+                "properties": {
+                    "end_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "fx_rate_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "indicative": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "report": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "start_date": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getSettlementStatsByCountryIn": {
+                "type": "object",
+                "properties": {
+                    "date_from": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "date_to": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getSettlementStatsByCountryOut": {
+                "type": "object",
+                "properties": {
+                    "by_country": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getSettlementStatsByTaxationTypeIn": {
+                "type": "object",
+                "properties": {
+                    "date_from": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "date_to": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getSettlementStatsByTaxationTypeOut": {
+                "type": "object"
+            },
+            "getSettlementSummaryIn": {
+                "type": "object",
+                "properties": {
+                    "end_month": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "moss_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "start_month": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_region": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getSettlementSummaryOut": {
+                "type": "object"
+            },
+            "getTransactionOut": {
+                "type": "object",
+                "properties": {
+                    "storage_required_fields": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_required_fields": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getTransactionsStatsByCountryIn": {
+                "type": "object",
+                "properties": {
+                    "date_from": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "date_to": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "global_currency_code": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getTransactionsStatsByCountryOut": {
+                "type": "object",
+                "properties": {
+                    "by_country": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getTransactionsStatsIn": {
+                "type": "object",
+                "properties": {
+                    "date_from": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "date_to": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "interval": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "getTransactionsStatsOut": {
+                "type": "object"
+            },
+            "input_transaction": {
+                "type": "object",
+                "properties": {
+                    "billing_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_credit_card_prefix": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_ip": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_tax_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "comments": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_data": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_fields": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "customer_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "force_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_place": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "note": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "order_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "original_transaction_key": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sub_account_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "supply_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_deducted": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "transaction_lines": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "verification_token": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "input_transaction_line": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_fields": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "deducted_tax_rate": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "informative": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "line_key": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "product_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "product_tax_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "product_type": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "quantity": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "supply_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_rate": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "total_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "unit_of_measure": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "unit_price": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "input_transaction_update": {
+                "type": "object",
+                "properties": {
+                    "billing_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_credit_card_prefix": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_ip": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_tax_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "comments": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_data": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_fields": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "customer_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "force_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_place": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "note": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "order_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "original_transaction_key": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sub_account_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "supply_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_deducted": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "transaction_lines": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "verification_token": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "invoice_address": {
+                "type": "object",
+                "properties": {
+                    "address_detail": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "building_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "city": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "country": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "freeform_address": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "postal_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "region": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "street_name": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "listPaymentsIn": {
+                "type": "object",
+                "properties": {
+                    "limit": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "offset": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "listPaymentsOut": {
+                "type": "object",
+                "properties": {
+                    "payments": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "listRefundsOut": {
+                "type": "object",
+                "properties": {
+                    "refunds": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "listTransactionsIn": {
+                "type": "object",
+                "properties": {
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "filter_text": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "format": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "has_note": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "key_or_custom_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "limit": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "offset": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "order_date_from": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "order_date_to": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "original_transaction_key": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sort_reverse": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "statuses": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_country_codes": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "total_amount_greater_than": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "total_amount_less_than": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "listTransactionsOut": {
+                "type": "object",
+                "properties": {
+                    "transactions": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "locateGivenIPOut": {
+                "type": "object",
+                "properties": {
+                    "country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "remote_addr": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "locateMyIPOut": {
+                "type": "object",
+                "properties": {
+                    "country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "remote_addr": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "payments": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "payment_information": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "payment_timestamp": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "product_type_schema": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "refunds": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "informative": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "line_key": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "refund_note_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "refund_note_url": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "refund_reason": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "refund_timestamp": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_rate": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "total_amount": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "report": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "country_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "country_subdivision": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "skip_moss": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_rate": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_region": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "settlement_daily_stats_schema": {
+                "type": "object",
+                "properties": {
+                    "b2b": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "b2c": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "count": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "day": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "day_raw": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "eu_b2b": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "eu_taxed": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "eu_total": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "untaxed": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "storage_required_fields": {
+                "type": "object",
+                "properties": {
+                    "field_name": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "summary": {
+                "type": "object",
+                "properties": {
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "end_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "fx_rate_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "indicative": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "quarter": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "start_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_entity_name": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "tax_data_schema": {
+                "type": "object"
+            },
+            "tax_required_fields": {
+                "type": "object",
+                "properties": {
+                    "field_name": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "transaction": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "billing_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_credit_card_prefix": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_ip": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_tax_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_tax_number_valid": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "comments": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "confirm_timestamp": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "create_timestamp": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_data": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_fields": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "customer_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "deducted_tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "external_key": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "force_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "fully_informative": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_image_url": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_place": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "key": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "kind": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "manual": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "note": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "order_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "original_transaction_key": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "refunded_tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "refunded_total_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "source": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sub_account_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "supply_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_deducted": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_entity_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_number_service": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_supported": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_timezone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "test": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "total_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "transaction_lines": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "verification_token": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "transaction_lines": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_fields": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "deducted_tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "deducted_tax_rate": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "informative": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "line_key": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "product_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "product_tax_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "product_type": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "quantity": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "refunded_tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "refunded_total_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "supply_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_rate": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "total_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "unit_of_measure": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "unit_price": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "transactions": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "billing_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_credit_card_prefix": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_email": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_ip": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_tax_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_tax_number_valid": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "comments": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "confirm_timestamp": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "create_timestamp": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "currency_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_data": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_fields": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "custom_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "customer_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "deducted_tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "description": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "external_key": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "force_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "fully_informative": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_image_url": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "invoice_place": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "key": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "kind": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "manual": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "note": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "order_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "original_transaction_key": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "refunded_tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "refunded_total_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "source": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "status": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "sub_account_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "supply_date": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_deducted": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_entity_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_number_service": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_supported": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_timezone": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "test": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "total_amount": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "transaction_lines": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "verification_token": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "unconfirmTransactionIn": {
+                "type": "object"
+            },
+            "unconfirmTransactionOut": {
+                "type": "object",
+                "properties": {
+                    "storage_required_fields": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_required_fields": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "updateTransactionIn": {
+                "type": "object"
+            },
+            "updateTransactionOut": {
+                "type": "object",
+                "properties": {
+                    "storage_required_fields": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_required_fields": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "us_tax_exempt_state": {
+                "type": "object",
+                "properties": {
+                    "identifier_for_exemption_reason": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "reason_for_exemption": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "state_abbr": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "us_tax_exemption_certificate_details_schema": {
+                "type": "object",
+                "properties": {
+                    "exempt_states": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchaser_address1": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchaser_address2": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchaser_business_type": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchaser_business_type_other_value": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchaser_city": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchaser_exemption_reason": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchaser_exemption_reason_value": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchaser_first_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchaser_last_name": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchaser_state": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchaser_title": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "purchaser_zip": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "single_purchase": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "single_purchase_order_identifier": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "us_tax_exemption_certificate_schema": {
+                "type": "object",
+                "properties": {
+                    "certificate_id": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "us_tax_id": {
+                "type": "object",
+                "properties": {
+                    "state_of_issue": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_id": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_id_type": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "validateTaxNumberIn": {
+                "type": "object",
+                "properties": {
+                    "country_code": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "validateTaxNumberOut": {
+                "type": "object",
+                "properties": {
+                    "billing_country_code": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_tax_number": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "buyer_tax_number_valid": {
+                        "description": "",
+                        "type": "get"
+                    },
+                    "tax_deducted": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            },
+            "verifySMSTokenOut": {
+                "type": "object",
+                "properties": {
+                    "country_code": {
+                        "description": "",
+                        "type": "get"
+                    }
+                }
+            }
+        }
+    }
+}
