@@ -1,5 +1,5 @@
 {
-    "id": "b515323d85c65e398b36c5751285726e",
+    "id": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
     "name": "Taxamo",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "3f990143705d1deaac5b912d83a2e7cd",
+            "id": "b5e2ba819c333581d2f2985a7126f03f",
             "name": "Countries",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/dictionaries\/countries",
             "description": "Countries.",
@@ -37,11 +37,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "7dabfd9081862052a9d34755e0c9f3e4",
+            "id": "52e78c38ccff31e43481e3ca6cf00c90",
             "name": "Currencies",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/dictionaries\/currencies",
             "description": "Currencies.",
@@ -60,11 +60,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "f3aebeaf54369c592ef5eaa8137c6f07",
+            "id": "d49c478a4c1a897caba66dac64894f69",
             "name": "Product Types",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/dictionaries\/product_types",
             "description": "Product types.",
@@ -83,11 +83,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "7c88c16de87176c2b45dca70273ae948",
+            "id": "3f2aae47a62d2003a78ef97fd0729c60",
             "name": "Locate IP Address",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/geoip",
             "description": "Locate ip address.",
@@ -106,11 +106,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "978913353ba250ea7f15f13e84213684",
+            "id": "e7dd9ce480235744da648269c80c1572",
             "name": "Locate Provided IP Address",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/geoip\/{ip}",
             "description": "Locate provided ip address.",
@@ -137,11 +137,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "b9e05888320a19e4be9409b4555bdfd0",
+            "id": "918c1c8c4ddbdad6eb183a08156b17d1",
             "name": "Calculate Domestic Summary",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/reports\/domestic\/summary",
             "description": "Calculate domestic summary.",
@@ -203,11 +203,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "3709ecd6c03c5747072deada883d7b49",
+            "id": "71b1368de829e28b2412713c65925b6d",
             "name": "Calculate EU VIES Report",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/reports\/eu\/vies",
             "description": "Calculate eu vies report.",
@@ -297,11 +297,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "d3f2a8f24c1b4f44a18fc98cc6232661",
+            "id": "ef0d4985947301e2bde899e775f1607a",
             "name": "Detailed Refunds",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/settlement\/detailed_refunds",
             "description": "Detailed refunds.",
@@ -363,11 +363,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "c6adb8709e83ae7a4ebc238369ae7ccd",
+            "id": "cedafa612ed3f6b2d7eb5aebe5588b35",
             "name": "Fetch Refunds",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/settlement\/refunds",
             "description": "Fetch refunds.",
@@ -415,11 +415,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "f6f3c22c42f5875db088658ec720eaa2",
+            "id": "753518403ffa9aca9905926f1147c5bc",
             "name": "Fetch Summary",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/settlement\/summary\/{quarter}",
             "description": "Fetch summary.",
@@ -474,11 +474,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "adda1fed1032d090552c6a9bdf0aba6e",
+            "id": "8cae7c6a7da14c60a928b4ef698ff81b",
             "name": "Fetch Settlement",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/settlement\/{quarter}",
             "description": "Fetch settlement.",
@@ -568,11 +568,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "65bcfc3daee1157ba86aadbe28d6b37f",
+            "id": "15806ebea2adfb8f1e3ba757f80fb728",
             "name": "Settlement By Country",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/stats\/settlement\/by_country",
             "description": "Settlement by country.",
@@ -606,11 +606,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "f8f462237833c4b92a8f69643ba5d6ec",
+            "id": "87a1ca2ffbc70002b76027346620f173",
             "name": "Settlement By Tax Type",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/stats\/settlement\/by_taxation_type",
             "description": "Settlement by tax type.",
@@ -644,11 +644,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "c3d53c2a30c3abc3879355ac2b4be032",
+            "id": "4f0dcd1664ac3e535ec2071e5bf9ebe4",
             "name": "Settlement Stats Over Time",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/stats\/settlement\/daily",
             "description": "Settlement stats over time.",
@@ -689,11 +689,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "be3ab0ab0864e2689e93e3cef2a54808",
+            "id": "28d504a931fb937c19590360bbd20a07",
             "name": "Transaction Stats",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/stats\/transactions",
             "description": "Transaction stats.",
@@ -734,11 +734,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "a4a82e9af614a6efef723ef73729dc90",
+            "id": "0f967a55708edeee5ca1e7ae702e47bc",
             "name": "Settlement By Country",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/stats\/transactions\/by_country",
             "description": "Settlement by country.",
@@ -779,11 +779,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "3228ec2ab4dba91ca4265412798a7264",
+            "id": "066ca3821426cee88aeebccd0b864ab0",
             "name": "Simple Tax",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/tax\/calculate",
             "description": "Simple tax.",
@@ -908,11 +908,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "2bc91a72b770aa81d1375f16e249f6b6",
+            "id": "d945f28ab4d8c8ac7b98e76b3539ee6c",
             "name": "Calculate Tax",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/tax\/calculate",
             "description": "Calculate tax.",
@@ -939,11 +939,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "f9b8b57e33c5ba6c8a2e76ee733166c3",
+            "id": "aec729f9cf235583993b1871760e43e0",
             "name": "Calculate Location",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/tax\/location\/calculate",
             "description": "Calculate location.",
@@ -977,11 +977,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "86a5066b445bb98a851970282be174b5",
+            "id": "f9707767295654d3feb1a832491f377b",
             "name": "Validate VAT Number",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/tax\/vat_numbers\/{tax_number}\/validate",
             "description": "Validate vat number.",
@@ -1015,11 +1015,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "8ec05f939a9186d679ea3809ca4f0f22",
+            "id": "c522a34107565718de2ba858b55537df",
             "name": "Browse Transactions",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions",
             "description": "Browse transactions.",
@@ -1158,11 +1158,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "1f03b1d7d8729fa477a6dd81294d1242",
+            "id": "01c5092855586fc56f92636078ed55f0",
             "name": "Store Transaction",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions",
             "description": "Store transaction.",
@@ -1189,11 +1189,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "ba33b6c6cb760a560c3f628cf2584bb4",
+            "id": "a30908bc4061fe40611dec2d4c6a9d54",
             "name": "Delete Transaction",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}",
             "description": "Delete transaction.",
@@ -1220,11 +1220,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "1ca05e0819a3739a33baa071e9716171",
+            "id": "88dfa0975ba48c5eb370abb9615b44b0",
             "name": "Retrieve Transaction Data.",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}",
             "description": "Retrieve transaction data..",
@@ -1251,11 +1251,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "bb6b7f701bc3e8b7bfd2cd9150cf686e",
+            "id": "1d96d9b71443120abf03c9dd2008d175",
             "name": "Update Transaction",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}",
             "description": "Update transaction.",
@@ -1289,11 +1289,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "9f4ca116b0c88c523c22032b00057371",
+            "id": "0800b2ccfb3f9c087e90529c95e7227a",
             "name": "Confirm Transaction",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/confirm",
             "description": "Confirm transaction.",
@@ -1327,11 +1327,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "7d85456a196888871dedb1d176a4a71c",
+            "id": "70b807959fb0f06d0c65c81221a08696",
             "name": "Email Credit Note",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/invoice\/refunds\/{refund_note_number}\/send_email",
             "description": "Email credit note.",
@@ -1372,11 +1372,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "c41442e3077cee8bf942eb959f9f0983",
+            "id": "f32b240735a4f5a7def8716941288798",
             "name": "Email Invoice",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/invoice\/send_email",
             "description": "Email invoice.",
@@ -1410,11 +1410,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "26aef414fb33584d250223f7ffa5e70c",
+            "id": "a9fc86705c0f5d2df6e0221a4d8d161e",
             "name": "List Payments",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/payments",
             "description": "List payments.",
@@ -1455,11 +1455,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "71aca5d559bf32a817390e9bdd4a18fa",
+            "id": "dabb533b0d6a1d0fa6a8749fa27392a3",
             "name": "Register A Payment",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/payments",
             "description": "Register a payment.",
@@ -1493,11 +1493,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "89e30d4f141d86b34357e279c804af55",
+            "id": "df61b6a32d29c5383ffef606387ab84e",
             "name": "Capture Payment",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/payments\/capture",
             "description": "Capture payment.",
@@ -1524,11 +1524,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "3ceeb3ebe7bd3d294d8f2210b8bfabe4",
+            "id": "1569f7f9960c706071063002bc8b850b",
             "name": "Get Transaction Refunds",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/refunds",
             "description": "Get transaction refunds.",
@@ -1555,11 +1555,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "ba2d826ee202325ed40083db578049a7",
+            "id": "fdcca4eadc2330169acf6d93dd86fea8",
             "name": "Create A Refund",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/refunds",
             "description": "Create a refund.",
@@ -1593,11 +1593,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "9a5e0ed9d6922fceb9b98c434875472b",
+            "id": "de7ded30221f1be300bd637ad5df3723",
             "name": "Un-confirm The Transaction",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/transactions\/{key}\/unconfirm",
             "description": "Un-confirm the transaction.",
@@ -1631,11 +1631,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "6e71760d3a75ef1584ef760f317e9a56",
+            "id": "1fcabb57ff32363a1c8a581797cc14b2",
             "name": "Create SMS Token",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/verification\/sms",
             "description": "Create sms token.",
@@ -1662,11 +1662,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         },
         {
-            "id": "237580aad2a2e16154a231d11000cc6e",
+            "id": "40002c2d0c5edf3023d34c753ef267a3",
             "name": "Verify SMS Token",
             "url": "httpsapi.taxamo.com\/\/api\/v1\/verification\/sms\/{token}",
             "description": "Verify sms token.",
@@ -1693,7 +1693,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "b515323d85c65e398b36c5751285726e",
+            "collectionId": "cdadf5f2a0f020aafb5c4af99ebe9d3d",
             "rawModeData": ""
         }
     ]
